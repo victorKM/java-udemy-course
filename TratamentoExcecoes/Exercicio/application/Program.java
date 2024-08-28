@@ -12,25 +12,25 @@ public class Program {
     Scanner sc = new Scanner(System.in);
 
 
+    System.out.println("Enter account data");
+    System.out.printf("Number: ");
+    int number = sc.nextInt();
+    System.out.printf("Holder: ");
+    sc.nextLine();
+    String holder = sc.nextLine();
+    System.out.printf("Initial balance: ");
+    Double balance = sc.nextDouble();
+    System.out.printf("Withdraw limit: ");
+    Double withdrawLimit = sc.nextDouble();
+
+    Account account = new Account(number, holder, balance, withdrawLimit);
+
+    System.out.println();
+
+    System.out.printf("Enter amount for withdraw: ");
+    Double amount = sc.nextDouble();
+    
     try {
-      System.out.println("Enter account data");
-      System.out.printf("Number: ");
-      int number = sc.nextInt();
-      System.out.printf("Holder: ");
-      sc.nextLine();
-      String holder = sc.nextLine();
-      System.out.printf("Initial balance: ");
-      Double balance = sc.nextDouble();
-      System.out.printf("Withdraw limit: ");
-      Double withdrawLimit = sc.nextDouble();
-
-      Account account = new Account(number, holder, balance, withdrawLimit);
-
-      System.out.println();
-
-      System.out.printf("Enter amount for withdraw: ");
-      Double amount = sc.nextDouble();
-
       account.withdraw(amount);
       System.out.printf("New balance: %.2f", account.getBalance());
     } 
